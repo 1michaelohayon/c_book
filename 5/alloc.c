@@ -1,5 +1,6 @@
 #define ALLOCSIZE 10000 /* size of available space */
-#define NULL 0;
+#include <string.h>
+
 static char allocbuf[ALLOCSIZE];
 static char *allocp = allocbuf;
 
@@ -16,6 +17,3 @@ void afree(char *p) { /* free storage pointed to by p *?*/
     allocp = p;
 }
 
-int main() {
-  alloc(5);
-}

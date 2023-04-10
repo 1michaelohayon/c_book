@@ -4,6 +4,7 @@
 #define abs(x) ((x) < 0 ? -(x) : (x))
 
 int atoi(char *s) {
+  char *s_b = s;
   while (isspace(*s)) // skip white space
     s++;
   int sign = (*s == '-') ? -1 : 1;
@@ -13,6 +14,7 @@ int atoi(char *s) {
   int n;
   for (; isdigit(*s); s++)
     n = 10 * n + (*s - '0');
+  s = s_b;
   return sign * n;
 }
 void swap(char *pa, char *pb) {

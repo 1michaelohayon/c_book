@@ -3,7 +3,7 @@
 int main()
 {
 	int c;
-	while (c = getchar() != EOF)
+	while ((c = getchar()) != EOF)
 		printf("%d\n", c);
 	printf("%d - at EOF", c);
 }

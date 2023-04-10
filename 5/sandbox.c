@@ -3,8 +3,6 @@
 #include <stdio.h>
 #include <string.h>
 #define SIZE 10
-
-
 /* strmp: pointer version */
 int strcmpp(char *s, char*t) {
   for(; *s == *t; s++, t++)
