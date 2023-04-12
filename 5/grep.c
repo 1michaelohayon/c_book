@@ -28,7 +28,7 @@ int main(int argc, char *argv[]) {
       }
   
   if (argc != 1)
-    printf("Useage: find -x -n pattern\n");
+    printf("usage: find -x -n pattern\n");
   else
     while (getlinex(line,MAXLINE) > 0) {
       lineno++;

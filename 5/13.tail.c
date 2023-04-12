@@ -22,7 +22,7 @@ int main(int argc, char *argv[]) {
   else if (argc == 2 && (*++argv)[0] == '-')
     n = atoi(argv[1] + 1);
   else
-    error("useage: tail [-n]");
+    error("usage: tail [-n]");
   if (n < 1 || n > LINES)
     n = LINES;
   for (i = 0; i < LINES; i++)

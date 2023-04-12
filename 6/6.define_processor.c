@@ -89,7 +89,7 @@ int main() {
       anticipate = KEY;
     else if (anticipate == KEY) {
       if (!isalpha(word[0])) {
-        printf("error: #define incorrect useage, must begin with a letter\n");
+        printf("error: #define incorrect usage, must begin with a letter\n");
         return 1;
       }
       strcpy(key, word);
