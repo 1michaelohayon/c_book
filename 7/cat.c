@@ -3,32 +3,32 @@
 
 /* cat: concatenate files */
 int main(int argc, char *argv[]) {
-  FILE *fp;
+    FILE *fp;
 
-  void filecopy(FILE *, FILE *);
-  char *prog = argv[0]; /* program name for errors */
+    void filecopy(FILE *, FILE *);
+    char *prog = argv[0]; /* program name for errors */
 
-  if (argc == 1) /* no args, copy standard output */
-    filecopy(stdin, stdout);
-  else
-    while (--argc > 0)
-      if ((fp = fopen(*++argv, "r")) == NULL) {
-        printf("cat : can't open %s\n", *argv);
-        return 1;
-      } else {
-        filecopy(fp, stdout);
-        fclose(fp);
-      }
-  if (ferror(stdout)) {
-    fprintf(stderr, "%s: error writing stdout\n", prog);
-    exit(2);
-  }
-  exit(0);
+    if (argc == 1) /* no args, copy standard output */
+        filecopy(stdin, stdout);
+    else
+        while (--argc > 0)
+            if ((fp = fopen(*++argv, "r")) == NULL) {
+                printf("cat : can't open %s\n", *argv);
+                return 1;
+            } else {
+                filecopy(fp, stdout);
+                fclose(fp);
+            }
+    if (ferror(stdout)) {
+        fprintf(stderr, "%s: error writing stdout\n", prog);
+        exit(2);
+    }
+    exit(0);
 }
 
 /* copy file ifp to file ofp */
 void filecopy(FILE *ifp, FILE *ofp) {
-  int c;
-  while ((c = getc(ifp)) != EOF)
-    putc(c, ofp);
+    int c;
+    while ((c = getc(ifp)) != EOF)
+        putc(c, ofp);
 }
